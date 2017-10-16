@@ -55,7 +55,7 @@ class Main extends Component {
 	let nWords = 0, nSentences = 0, nSyllabes = 0;
 	nWords = text.split(/[a-zA-z]+/).length-1;
 	nSentences = text.split(/[^!?.]+/).length-1;
-	nSyllabes = text.split(/[a-zA-Z]/).length-1;
+	nSyllabes = text.split(/[bcdfghjklmnpqrstvwxyz]*[aeiou]+[bcdfghjklmnpqrstvwxyz]*/).length-1;
 
 	console.log('words :', nWords, 'sentences :', nSentences, 'syllables :', nSyllabes);
 	let score = 206.835 - 1.015*(nWords/nSentences) - 84.6*(nSyllabes/nWords);
